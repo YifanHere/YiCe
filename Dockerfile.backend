@@ -1,0 +1,24 @@
+# Use Python 3.11 base image
+FROM python:3.11-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install uv
+RUN pip install --no-cache-dir uv
+
+# Copy pyproject.toml and uv.lock (if exists)
+COPY backend/pyproject.toml ./
+COPY backend/.python-version ./ 2>/dev/null || true
+
+# Install dependencies
+RUN uv pip install --system -r pyproject.toml
+
+# Copy backend code
+COPY backend/ ./
+
+# Expose port
+EXPOSE 8000
+
+# Command to run the app
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
