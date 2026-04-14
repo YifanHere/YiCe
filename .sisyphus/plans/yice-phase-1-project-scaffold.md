@@ -777,7 +777,7 @@ Wave 3 (After Wave 2 - 集成与容器化):
 
 - [x] F1. **Plan Compliance Audit** — `oracle`
 - [x] F2. **Code Quality Review** — `unspecified-high`
-- [ ] F3. **Real Manual QA** — `unspecified-high`
+- [x] F3. **Real Manual QA** — `unspecified-high`
 - [x] F4. **Scope Fidelity Check** — `deep`
 
 ---

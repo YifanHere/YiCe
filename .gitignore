@@ -360,3 +360,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Oh My OpenCode
+.sisyphus/
