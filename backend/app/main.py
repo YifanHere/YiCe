@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from app.api import health_router
+from app.api import health_router, data_router
 from app.core.config import settings
 
 
@@ -24,6 +24,7 @@ def create_app() -> FastAPI:
 
     # Include routers
     app.include_router(health_router, prefix="/api/health", tags=["health"])
+    app.include_router(data_router, prefix="/api/v1", tags=["data"])
 
     # Root endpoint
     @app.get("/")
