@@ -27,6 +27,17 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "your-super-secret-key-change-in-production"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
+    # Data Sources
+    TUSHARE_TOKEN: str = ""
+    # TODO: Add AKShare configuration (AKSHARE_TOKEN if needed)
+    # TODO: Add JQData configuration (JQDATA_USERNAME, JQDATA_PASSWORD)
+    
+    # Redis
+    REDIS_HOST: str = "localhost"
+    REDIS_PORT: int = 6379
+    REDIS_PASSWORD: str = ""
+    REDIS_DB: int = 0
+    
     @property
     def is_development(self) -> bool:
         return self.ENVIRONMENT == "development"
